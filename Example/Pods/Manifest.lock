@@ -1,10 +1,10 @@
 PODS:
-  - Extension (0.1.2)
+  - Extension/Array (0.1.2)
   - MJRefresh (3.7.5)
   - ScrollViewProvider/Core (0.1.0):
     - SnapKit
   - ScrollViewProvider/Draggable (0.1.0):
-    - Extension
+    - Extension/Array
     - ScrollViewProvider/Core
   - ScrollViewProvider/Refreshable (0.1.0):
     - MJRefresh
@@ -14,7 +14,7 @@ PODS:
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
-  - Extension (from `../../Extension`)
+  - Extension/Array (from `../../Extension`)
   - ScrollViewProvider/Core (from `../`)
   - ScrollViewProvider/Draggable (from `../`)
   - ScrollViewProvider/Refreshable (from `../`)
@@ -32,11 +32,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Extension: 4efdd3e31b3b6f34c73a45fc9958c7e7dcf124e7
+  Extension: 6a0cfae6d40dac38a0c605b8d4e9b38c96c9bacf
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
-  ScrollViewProvider: 579c7f2c8d332691f67545a37d437447678e92b4
+  ScrollViewProvider: eae3b14e5953b2e12055b59ce6b370d72fcc78fe
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 04356f83b8855ed665329a07e1f7be7853b9cc23
+PODFILE CHECKSUM: 3616843e8e876838890b0c7db7f85f229c979e80
 
 COCOAPODS: 1.12.1

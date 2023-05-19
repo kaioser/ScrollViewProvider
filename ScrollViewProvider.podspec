@@ -50,7 +50,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Draggable' do |draggable|
       draggable.source_files = 'ScrollViewProvider/Classes/Draggable/**/*'
       draggable.dependency 'ScrollViewProvider/Core'
-      draggable.dependency 'Extension'
+      draggable.dependency 'Extension/Array'
   end
   
 end

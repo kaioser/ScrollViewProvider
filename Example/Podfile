@@ -9,7 +9,7 @@ target 'ScrollViewProvider_Example' do
   pod 'ScrollViewProvider/Searchable', :path => '../'
   pod 'ScrollViewProvider/Draggable', :path => '../'
   
-  pod 'Extension', :path => '../../Extension'
+  pod 'Extension/Array', :path => '../../Extension'
 
   target 'ScrollViewProvider_Tests' do
     inherit! :search_paths

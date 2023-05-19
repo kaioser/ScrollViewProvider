@@ -20,5 +20,11 @@
   },
   "swift_versions": "5.0",
   "source_files": "Extension/Classes/**/*",
+  "subspecs": [
+    {
+      "name": "Array",
+      "source_files": "Extension/Classes/Array/**/*"
+    }
+  ],
   "swift_version": "5.0"
 }
