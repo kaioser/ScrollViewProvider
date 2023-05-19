@@ -1,0 +1,6 @@
+framework module ScrollViewProvider {
+  umbrella header "ScrollViewProvider-umbrella.h"
+
+  export *
+  module * { export * }
+}

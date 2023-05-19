@@ -1,0 +1,67 @@
+{
+  "name": "ScrollViewProvider",
+  "version": "0.1.0",
+  "summary": "滑动视图",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://gitee.com/uiop/scroll-view-provider",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yxkkk": "13730228573@163.com"
+  },
+  "source": {
+    "git": "https://gitee.com/uiop/scroll-view-provider.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "ScrollViewProvider/Classes/Core/**/*",
+      "frameworks": "UIKit",
+      "dependencies": {
+        "SnapKit": [
+
+        ]
+      }
+    },
+    {
+      "name": "Refreshable",
+      "source_files": "ScrollViewProvider/Classes/Refreshable/**/*",
+      "dependencies": {
+        "MJRefresh": [
+
+        ],
+        "ScrollViewProvider/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "Searchable",
+      "source_files": "ScrollViewProvider/Classes/Searchable/**/*",
+      "dependencies": {
+        "ScrollViewProvider/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "Draggable",
+      "source_files": "ScrollViewProvider/Classes/Draggable/**/*",
+      "dependencies": {
+        "ScrollViewProvider/Core": [
+
+        ],
+        "Extension": [
+
+        ]
+      }
+    }
+  ]
+}
