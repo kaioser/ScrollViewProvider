@@ -97,7 +97,7 @@ private extension TableViewProvider {
         table.estimatedRowHeight = 200
         table.estimatedSectionFooterHeight = 0
         table.estimatedSectionHeaderHeight = 0
-        table.rowHeight = UITableViewAutomaticDimension
+        table.rowHeight = UITableView.automaticDimension
         table.tag = kTableViewTag
         if #available(iOS 15.0, *) { table.sectionHeaderTopPadding = 0 }
         return table

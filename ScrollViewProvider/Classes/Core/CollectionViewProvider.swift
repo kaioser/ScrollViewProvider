@@ -54,7 +54,7 @@ public extension CollectionViewProvider {
         
         let headerFooters = collectionViewHeaderFooter()
         headerFooters.forEach {
-            let kind = $0.kind == .header ? UICollectionElementKindSectionHeader : UICollectionElementKindSectionFooter
+            let kind = $0.kind == .header ? UICollectionView.elementKindSectionHeader : UICollectionView.elementKindSectionFooter
             c.register($0.type, forSupplementaryViewOfKind: kind, withReuseIdentifier: $0.iden)
         }
         
