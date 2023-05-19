@@ -1408,6 +1408,38 @@
 			};
 			name = Debug;
 		};
+		9DB11B9DD4041FA96B0BC933A91A65E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37C9D384B97529AFC50C9C42A9A26775 /* ScrollViewProvider.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollViewProvider/ScrollViewProvider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollViewProvider/ScrollViewProvider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ScrollViewProvider/ScrollViewProvider.modulemap";
+				PRODUCT_MODULE_NAME = ScrollViewProvider;
+				PRODUCT_NAME = ScrollViewProvider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1467,39 +1499,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		CC32980D803DF8B2CA5FC4C92D52CA22 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02B483A45F180D4A0D51F24D1DEEE52D /* ScrollViewProvider.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollViewProvider/ScrollViewProvider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollViewProvider/ScrollViewProvider-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ScrollViewProvider/ScrollViewProvider.modulemap";
-				PRODUCT_MODULE_NAME = ScrollViewProvider;
-				PRODUCT_NAME = ScrollViewProvider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1705,9 +1704,9 @@
 			};
 			name = Release;
 		};
-		FFCC78D10CF0CAF59240DFDE17DFC847 /* Debug */ = {
+		EBC328F1EFFBCBB1980B0A389305554D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37C9D384B97529AFC50C9C42A9A26775 /* ScrollViewProvider.debug.xcconfig */;
+			baseConfigurationReference = 02B483A45F180D4A0D51F24D1DEEE52D /* ScrollViewProvider.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1730,12 +1729,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1779,8 +1779,8 @@
 		73796FD769CE2662CEF635BB016383E2 /* Build configuration list for PBXNativeTarget "ScrollViewProvider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FFCC78D10CF0CAF59240DFDE17DFC847 /* Debug */,
-				CC32980D803DF8B2CA5FC4C92D52CA22 /* Release */,
+				9DB11B9DD4041FA96B0BC933A91A65E3 /* Debug */,
+				EBC328F1EFFBCBB1980B0A389305554D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
