@@ -1,15 +1,15 @@
 PODS:
-  - Extension/Array (0.1.2)
+  - Extension/Array (0.1.4)
   - MJRefresh (3.7.5)
-  - ScrollViewProvider/Core (0.1.0):
+  - ScrollViewProvider/Core (0.1.1):
     - SnapKit
-  - ScrollViewProvider/Draggable (0.1.0):
+  - ScrollViewProvider/Draggable (0.1.1):
     - Extension/Array
     - ScrollViewProvider/Core
-  - ScrollViewProvider/Refreshable (0.1.0):
+  - ScrollViewProvider/Refreshable (0.1.1):
     - MJRefresh
     - ScrollViewProvider/Core
-  - ScrollViewProvider/Searchable (0.1.0):
+  - ScrollViewProvider/Searchable (0.1.1):
     - ScrollViewProvider/Core
   - SnapKit (5.6.0)
 
@@ -32,9 +32,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Extension: 6a0cfae6d40dac38a0c605b8d4e9b38c96c9bacf
+  Extension: 43d892600171030431986d5d6ef47ecafd521dcf
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
-  ScrollViewProvider: eae3b14e5953b2e12055b59ce6b370d72fcc78fe
+  ScrollViewProvider: 243e0217217468bd371b264b74c02678dba04c88
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
 PODFILE CHECKSUM: 3616843e8e876838890b0c7db7f85f229c979e80

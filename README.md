@@ -1,9 +1,9 @@
 # ScrollViewProvider
 
-[![CI Status](https://img.shields.io/travis/yxkkk/ScrollViewProvider.svg?style=flat)](https://travis-ci.org/yxkkk/ScrollViewProvider)
-[![Version](https://img.shields.io/cocoapods/v/ScrollViewProvider.svg?style=flat)](https://cocoapods.org/pods/ScrollViewProvider)
-[![License](https://img.shields.io/cocoapods/l/ScrollViewProvider.svg?style=flat)](https://cocoapods.org/pods/ScrollViewProvider)
-[![Platform](https://img.shields.io/cocoapods/p/ScrollViewProvider.svg?style=flat)](https://cocoapods.org/pods/ScrollViewProvider)
+ [![CI Status](https://img.shields.io/travis/yxkkk/ScrollViewProvider.svg?style=flat)](https://travis-ci.org/yxkkk/ScrollViewProvider)
+ [![Version](https://img.shields.io/cocoapods/v/ScrollViewProvider.svg?style=flat)](https://cocoapods.org/pods/ScrollViewProvider)
+ [![License](https://img.shields.io/cocoapods/l/ScrollViewProvider.svg?style=flat)](https://cocoapods.org/pods/ScrollViewProvider)
+ [![Platform](https://img.shields.io/cocoapods/p/ScrollViewProvider.svg?style=flat)](https://cocoapods.org/pods/ScrollViewProvider)
 
 ## Example
 
@@ -22,7 +22,7 @@ pod 'ScrollViewProvider'
 
 ## Author
 
-yxkkk, 13730228573@163.com
+yangxiongkai, yangxiongkai@126.com
 
 ## License
 

@@ -8,21 +8,18 @@
 import UIKit
 import SnapKit
 
-// MARK: - 方法声明 + 默认实现
+// MARK: - 声明 + 默认实现
 
 // UITableViewController无需使用此协议，如果一个页面只有一个tableView，还是建议使用系统的UITableViewController
 public protocol TableViewProvider where Self: ScrollViewProvider & UITableViewDataSource & UITableViewDelegate {
     
     /// 提供初始化时tableView的style，默认plain
-    /// - Returns: style
     func tableViewInitStyle() -> UITableView.Style
     
     /// 提供需要注册的cell类型集合
-    /// - Returns: cell集合
     func tableViewCells() -> [TableViewCellProvider]
     
     /// 提供需要注册的组头组尾，默认为空
-    /// - Returns: view组合
     func tableViewSectionHeaderFooter() -> [TableViewSectionHeaderFooterProvider]
 }
 
@@ -43,7 +40,6 @@ public extension TableViewProvider {
     }
     
     /// 初始化tableView（遵守协议方写在viewDidLoad中）
-    /// - Parameter additionWay: 布局方式
     func initializeTableView() {
         if isRootView {
             // 本身根视图就是UITableView的情况，直接啥也不做，相当于没有遵守此协议

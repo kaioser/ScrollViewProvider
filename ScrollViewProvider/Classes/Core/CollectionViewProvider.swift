@@ -13,15 +13,12 @@ import SnapKit
 public protocol CollectionViewProvider where Self: ScrollViewProvider & UICollectionViewDelegate & UICollectionViewDataSource {
     
     /// 提供collectionView初始化时的布局模型（只执行一次）
-    /// - Returns: 布局
     func collectionViewInitLayout() -> UICollectionViewLayout
     
     /// 提供需要注册的cell（内部会进行注册）
-    /// - Returns: cell类型集合
     func collectionViewCells() -> [CollectionViewCellProvider]
     
     /// 提供需要注册的sectionHeader和sectionFooter（内部会进行注册），默认为空
-    /// - Returns: header和footer集合
     func collectionViewHeaderFooter() -> [CollectionViewHeaderFooterProvider]
 }
 
@@ -40,7 +37,6 @@ public extension CollectionViewProvider {
     }
     
     /// 初始化collectionView（遵守协议者写在viewDidLoad中）
-    /// - Parameter additionWay: 布局方式
     func initializeCollectionView() {
         if isRootView {
             // 本身根视图就是UICollectionView的情况，直接啥也不做，相当于没有遵守此协议
@@ -70,7 +66,7 @@ public extension CollectionViewProvider {
     }
 }
 
-// MARK: - 私有方法
+// MARK: - 私有
 
 private extension CollectionViewProvider {
     

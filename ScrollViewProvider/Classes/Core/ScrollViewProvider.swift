@@ -11,15 +11,12 @@ import UIKit
 public protocol ScrollViewProvider {
     
     /// 提供ScrollView的父视图
-    /// - Returns: view
     func scrollViewSuperview() -> UIView
     
     /// 提供外边距，默认zero，与scrollViewFrame互斥，实现其中一个就好，优先级比scrollViewFrame低
-    /// - Returns: insets
     func scrollViewEdgeInsets() -> UIEdgeInsets
     
     /// 提供frame，默认nil，与scrollViewEdgeInsets互斥，实现其中一个就好，优先级比scrollViewEdgeInsets高
-    /// - Returns: frame
     func scrollViewFrame() -> CGRect?
 }
 

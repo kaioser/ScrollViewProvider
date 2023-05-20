@@ -1,19 +1,19 @@
 {
   "name": "ScrollViewProvider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "滑动视图",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://gitee.com/uiop/scroll-view-provider",
+  "homepage": "https://github.com/kaioser/ScrollViewProvider",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "yxkkk": "13730228573@163.com"
+    "yangxiongkai": "yangxiongkai@126.com"
   },
   "source": {
-    "git": "https://gitee.com/uiop/scroll-view-provider.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/kaioser/ScrollViewProvider.git",
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "13.0"
