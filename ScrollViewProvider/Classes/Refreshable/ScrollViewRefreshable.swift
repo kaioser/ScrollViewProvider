@@ -18,13 +18,13 @@ public protocol Refreshable {
     /// 是否提供上拉加载功能（鉴于有的页面只需要下拉刷新而已），默认true
     /// - Returns: 开关
     func refreshableFooterEnable() -> Bool
-        
+    
     /// 下拉刷新
     func handleRefresh()
     
     /// 上拉加载
     func handleLoadMore()
-        
+    
     /// 是否需要一进入页面立即刷新，默认none
     func refreshImmediatelyMode() -> RefreshImmediatelyMode
 }
@@ -34,7 +34,7 @@ public extension Refreshable {
     func refreshableFooterEnable() -> Bool { true }
     
     func refreshImmediatelyMode() -> RefreshImmediatelyMode { .none }
-        
+    
     /// 安装刷新控件（写在遵守者的viewDidLoad方法中）
     func initializeRefresh() {
         
@@ -75,7 +75,7 @@ public extension Refreshable {
         
         let scrollView = refreshableView()
         scrollView.mj_header?.endRefreshing()
-
+        
         if noMoreData {
             scrollView.mj_footer?.endRefreshingWithNoMoreData()
         } else {
@@ -93,4 +93,25 @@ public enum RefreshImmediatelyMode: Int {
     case pull
     /// 立即刷新无动画
     case none
+}
+
+// 使用系统的下拉刷新
+
+public protocol SystemRefreshable: UITableViewController {
+    func handleRefresh() -> Selector
+}
+
+public extension SystemRefreshable {
+    
+    func initializeRefresh() {
+        refreshControl = UIRefreshControl()
+        
+        let selector = handleRefresh()
+        refreshControl?.addTarget(self, action: selector, for: .valueChanged)
+        perform(selector)
+    }
+    
+    func stopRefreshing() {
+        refreshControl?.endRefreshing()
+    }
 }
