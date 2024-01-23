@@ -8,6 +8,7 @@
 
 import UIKit
 import ScrollViewProvider
+import SnapKit
 
 class ViewController: UIViewController {
     
@@ -24,14 +25,14 @@ class ViewController: UIViewController {
     
     @objc private func popAction() {
         
-        let vc = TempControllerAir()
+        let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .pageSheet
         
         // 这种sheet可以用在很多地方，比如底部评论列表、评论field、评论回复列表等
         if #available(iOS 15.0, *) {
             if let sheet = nav.sheetPresentationController {
-                //                sheet.detents = [.medium(), .large()]
+                                sheet.detents = [.medium(), .large()]
                 //                sheet.selectedDetentIdentifier = .large
                 
                 // medium控制器内容可滑动
@@ -41,13 +42,13 @@ class ViewController: UIViewController {
                 //                sheet.largestUndimmedDetentIdentifier = .medium
                 
                 
-                if #available(iOS 16.0, *) {
-                    sheet.detents = [.medium(), .large(), .custom(resolver: { context in
-                        100
-                    })]
-                } else {
+//                if #available(iOS 16.0, *) {
+//                    sheet.detents = [.medium(), .large(), .custom(resolver: { context in
+//                        100
+//                    })]
+//                } else {
                     // Fallback on earlier versions
-                }
+//                }
                 //                sheet.selectedDetentIdentifier = .large
                 
                 
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
 //                sheet.preferredCornerRadius = 50
                 
                 // 顶部bar
-                sheet.prefersGrabberVisible = true
+//                sheet.prefersGrabberVisible = true
             }
         }
         
@@ -112,8 +113,137 @@ fileprivate class TempControllerAir: UITableViewController {
     }
 }
 
+private let kMiniSpace: CGFloat = 16
+private let kLargeSpace: CGFloat = 40
+private let kSignInTitle: String = "登录"
+private let kSignUpTitle: String = "注册"
 
+fileprivate class LoginViewController: UIViewController {
+    
+    deinit {
+        print("LoginViewController 已销毁")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let segView = UISegmentedControl(items: [kSignInTitle, kSignUpTitle])
+        segView.selectedSegmentIndex = 0
+        segView.addTarget(self, action: #selector(segAction), for: .valueChanged)
+        navigationItem.titleView = segView
+        view.backgroundColor = .systemBackground
+        
+        setupUI()
+    }
+    
+    private func setupUI() {
+        view.addSubview(emailField)
+        emailField.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(kMiniSpace)
+            make.top.equalToSuperview().inset(60)
+            make.height.equalTo(44)
+        }
+        
+        view.addSubview(passwordField)
+        passwordField.snp.makeConstraints { make in
+            make.left.right.height.equalTo(emailField)
+            make.top.equalTo(emailField.snp.bottom).offset(kMiniSpace)
+        }
+        
+        view.addSubview(loginButton)
+        loginButton.snp.makeConstraints { make in
+            make.left.right.height.equalTo(emailField)
+            make.top.equalTo(passwordField.snp.bottom).offset(kLargeSpace)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        loginButton.layer.cornerRadius = 5
+        loginButton.layer.masksToBounds = true
+    }
+    
+    @objc private func loginAction() {
+        
+    }
+    
+    @objc private func segAction(_ seg: UISegmentedControl) {
+        
+    }
+    
+    class InfinityButton: UIButton {
+        
+        convenience init(_ title: String, backgroundColor: UIColor, target: Any, action: Selector) {
+            self.init(type: .system)
+            
+            self.backgroundColor = backgroundColor
+            setTitle(title, for: .normal)
+            setTitleColor(.white, for: .normal)
+            addTarget(target, action: action, for: .touchUpInside)
+        }
+    }
+    
+    private lazy var loginButton: InfinityButton = {
+        InfinityButton(kSignInTitle, backgroundColor: .systemBlue, target: self, action: #selector(loginAction))
+    }()
+    
+    private lazy var emailField: UITextField = {
+        let v = UITextField()
+        v.placeholder = "请输入邮箱"
+        v.keyboardType = .emailAddress
+        v.borderStyle = .roundedRect
+        v.returnKeyType = .next
+        v.delegate = self
+        v.font = .preferredFont(forTextStyle: .body)
+        return v
+    }()
+    
+    private lazy var passwordField: UITextField = {
+        let v = UITextField()
+        v.placeholder = "请输入密码"
+        v.keyboardType = .alphabet
+        v.borderStyle = .roundedRect
+        v.returnKeyType = .done
+        v.isSecureTextEntry = true
+        v.delegate = self
+        v.font = .preferredFont(forTextStyle: .body)
+        return v
+    }()
+    
+    private lazy var passwordAgainField: UITextField = {
+        let v = UITextField()
+        v.placeholder = "请再次输入密码"
+        v.keyboardType = .alphabet
+        v.borderStyle = .roundedRect
+        v.returnKeyType = .done
+        v.isSecureTextEntry = true
+        v.delegate = self
+        v.font = .preferredFont(forTextStyle: .body)
+        return v
+    }()
+}
 
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.returnKeyType == .next {
+            if passwordField.isFirstResponder {
+                passwordAgainField.becomeFirstResponder()
+            } else {
+                passwordField.becomeFirstResponder()
+            }
+        } else {
+            if passwordField.isFirstResponder {
+                passwordField.resignFirstResponder()
+            } else {
+                passwordAgainField.resignFirstResponder()
+            }
+        }
+        
+        return true
+    }
+}
 
 
 
